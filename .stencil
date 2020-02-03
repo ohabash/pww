@@ -1,0 +1,11 @@
+{
+  "normalStoreUrl": "https://prowest.mybigcommerce.com/",
+  "accessToken": "kt808lsrzng0eiwhqcnp1hgr2klm330",
+  "port": "3333",
+  "customLayouts": {
+    "brand": {},
+    "category": {},
+    "page": {},
+    "product": {}
+  }
+}
