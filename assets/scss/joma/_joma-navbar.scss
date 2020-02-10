@@ -1,9 +1,101 @@
-#joma-navbar {
-    .pages-left {
-        float: left;
+$primary: #ff0044;
+
+// nav (made by JOMA)
+.navPages-item.alt {
+
+    // position: relative;
+    h6 {
+        color: #222;
     }
 
-    .pages-right {
-        float: right;
+    .t2-href {
+        display: block;
+
+        &:hover {
+            h6 {
+                color: $primary;
+            }
+        }
+    }
+
+    // .sub-cate-img img {
+    //     max-width: 250px;
+    // }
+    .navPage-subMenu_alt {
+        display: none;
+        position: absolute;
+        left: 0;
+        // bottom: 0;
+        width: 100%;
+        background: #efefef;
+        z-index: 9;
+        text-align: left;
+        padding: 3em 1em;
+        box-shadow: 1px 11px 6px rgba(#000, 0.3);
+
+        @include bp(M-tablet) {
+            position: static;
+            box-shadow: 0 0 0;
+            padding: 1em;
+
+            h6 {
+                color: $primary;
+            }
+
+            img {
+                display: none !important;
+            }
+        }
+    }
+
+    .nav-t2-item {
+        max-width: 200px;
+    }
+
+    &:hover {
+        @media (min-width: 1000px) {
+            .navPage-subMenu_alt {
+                display: block;
+            }
+        }
+    }
+
+    // default item based styles
+    &.isMobile {
+        .no-kids {
+            text-align: left !important;
+
+            h6 {
+                margin: 0;
+                text-align: left !important;
+            }
+        }
+
+        .navPages-action {
+            position: sticky;
+            top: 0;
+            z-index: 2;
+            background: #fff;
+            border-bottom: 1px solid rgba(#ccc, 0.75);
+        }
+
+        .navPage-subMenu_alt {
+            -webkit-animation-duration: 0.5s;
+            animation-duration: 0.5s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+            -webkit-animation-name: fadeIn;
+            animation-name: fadeIn;
+            display: none;
+        }
+    }
+
+    // when mobile is open styles
+    &.mobile_open {
+        position: relative;
+
+        .navPage-subMenu_alt {
+            display: block;
+        }
     }
 }

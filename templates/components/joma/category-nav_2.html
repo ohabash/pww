@@ -1,0 +1,53 @@
+{{#each categories}}
+    <li class="navPages-item alt">
+        <!-- t1 -->
+        <a class="navPages-action has-subMenu {{#if children}}haschildren{{/if}}">
+            <span class="text-menu">{{name}}</span>
+            <i class="icon navPages-action-moreIcon hide" aria-hidden="true"><svg>
+                    <use xlink:href="#icon-chevron-down" /></svg></i>
+        </a>
+
+
+        {{#if children}}
+        <div class="navPage-subMenu_alt" id="navPages-{{id}}" tabindex="-1">
+            <div class="container">
+
+                {{!-- t2 (with children) --}}
+                <div class="t2-list with-children columns is-centered">
+                    {{#each children}}
+                    <div class="nav-t2-item column {{#if not children}}tac no-kids{{/if}}">
+                        <a href="{{url}}" class="t2-href">
+                            {{!-- image --}}
+                            <div class="image-t2">
+                                {{#if image}}
+                                <div class="sub-cate-img"><img src="{{getImage image '80x80'}}" alt="{{name}}"></div>
+                                {{else}}
+                                <div class="sub-cate-img"><img
+                                        src="https://cdn11.bigcommerce.com/s-d8768tzdj/stencil/332cfbc0-23b8-0137-9598-0242ac110010/e/66f4f850-23b8-0137-de4a-0242ac110012/img/CategoryDefault.jpg"
+                                        alt="{{name}}"></div>
+                                {{/if}}
+                            </div>
+
+                            <h6 class="text-menu">{{name}}</h6>
+                        </a>
+
+                        {{!-- t3 --}}
+                        <div class="t3-list">
+                            {{#each children}}
+                            <div class="nav-t2-item">
+                                <a href="{{url}}" class="text-menu">{{name}}</a>
+                            </div>
+                            {{/each}}
+                        </div>
+
+                    </div>
+                    {{/each}}
+                </div>
+
+
+            </div>
+        </div>
+        {{/if}}
+
+    </li>
+{{/each}}
