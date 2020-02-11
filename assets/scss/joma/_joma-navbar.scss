@@ -1,5 +1,6 @@
 $primary: #ff0044;
 
+
 // nav (made by JOMA)
 .navPages-item.alt {
 
@@ -30,7 +31,7 @@ $primary: #ff0044;
         background: #efefef;
         z-index: 9;
         text-align: left;
-        padding: 3em 1em;
+        padding: 0em 1em 3em;
         box-shadow: 1px 11px 6px rgba(#000, 0.3);
 
         @include bp(M-tablet) {
@@ -48,8 +49,41 @@ $primary: #ff0044;
         }
     }
 
+
+    .t2-list {
+        background: red;
+    }
+
+
     .nav-t2-item {
         max-width: 200px;
+        font-size: 1em !important;
+
+        &.column {
+            min-width: 13%;
+
+            &:hover .t3-list {
+                // display: block;
+            }
+        }
+
+        h6 {
+            font-weight: bold;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .t3-list {
+            // display: none;
+
+            .nav-t2-item {
+                a {
+                    text-decoration: none;
+                }
+            }
+        }
     }
 
     &:hover {
