@@ -4,6 +4,7 @@ import 'babel-polyfill';
 import $ from 'jquery';
 import 'jquery-migrate';
 import Global from './theme/global';
+// window['$'] = $;
 
 const getAccount = () => import('./theme/account');
 const getLogin = () => import('./theme/auth');

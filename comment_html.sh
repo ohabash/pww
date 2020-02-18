@@ -1,12 +1,9 @@
 #!/bin/bash
-
-FILES=$(find . -name "*.html")
+FILES=$(find ./templates -name "*.html")
 for file in $FILES
 do 
-    sed -n -e '/<!-- file/,/html -->/p' $file
-    # grep -v 'file Start' $file
-    # sed -n -e "/\b\(file\|Start\)\b/d"
+    sed -i '' '/<!-- BCFIND file start/d' $file
     content=$(<$file)
-    echo "<!-- file Start :: $file -->" > $file
+    echo "<!-- BCFIND file start :: $file -->" > $file
     echo "$content" >> $file;
 done

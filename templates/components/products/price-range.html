@@ -1,3 +1,4 @@
+<!-- BCFIND file start :: ./templates/components/products/price-range.html -->
 {{#and price_range.min.with_tax price_range.max.with_tax}}
     <div class="price-section price-section--withTax" {{#if schema_org}}itemprop="offers" itemscope itemtype="http://schema.org/Offer"{{/if}}>
         <span data-product-price-with-tax class="price">{{price_range.min.with_tax.formatted}} - {{price_range.max.with_tax.formatted}}</span>

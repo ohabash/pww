@@ -1,7 +1,17 @@
+@import 'bulma';
+
 $primary: #ff0044;
+$t2w: 200px;
+$red: $primary;
+
 
 // nav (made by JOMA)
 .navPages-item.alt {
+    position: relative;
+    .icon {
+        height: 0.5rem;
+        width: 0.5rem;
+    }
 
     // position: relative;
     h6 {
@@ -25,13 +35,12 @@ $primary: #ff0044;
         display: none;
         position: absolute;
         left: 0;
-        // bottom: 0;
         width: 100%;
         background: #efefef;
         z-index: 9;
         text-align: left;
-        padding: 3em 1em;
-        box-shadow: 1px 11px 6px rgba(#000, 0.3);
+        box-shadow: 1px 11px 6px rgba(0, 0, 0, 0.3);
+        margin-top: 1px;
 
         @include bp(M-tablet) {
             position: static;
@@ -48,9 +57,86 @@ $primary: #ff0044;
         }
     }
 
-    .nav-t2-item {
-        max-width: 200px;
+
+    .t2-list {
+        font-size: 0.9em;
+        .nav-t2-item {
+            background: #fff;
+            .t2-href {
+                text-decoration: none;
+                width: $t2w;
+                h6 {
+                    font-weight: bold;
+                    padding: 0.4em;
+                    padding-left: 1em;
+                    margin: 0;
+                    line-height: 1.8em;
+
+                    &:hover {
+                        color: darken(#cb0039, 10%);
+                    }
+                }
+            }
+
+            &:hover {
+                background: none;
+            }
+
+            &.active {
+                background: #000;
+            }
+
+            // &:hover .t3-list {
+            //     display: block;
+            // }
+        }
+
+        .t3-list {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: $t2w;
+            pointer-events: auto;
+            background: $red;
+            color: #fff;
+
+            right: 0;
+            height: 100%;
+            padding: 1em;
+            &.open {
+                display: block;
+            }
+            // &:hover {
+            //     display: block;
+            //     pointer-events: auto;
+            // }
+
+            .t2-img {
+                position: absolute;
+                right: 0;
+                // float: right;
+            }
+
+            .t3-list-grid {
+            }
+
+            .t3-list-grid-side {
+                display: none;
+            }
+
+            a {
+                text-decoration: none;
+                color: #fff;
+            }
+        }
     }
+
+    a.navPages-action {
+        padding: 1em;
+    }
+
+
+
 
     &:hover {
         @media (min-width: 1000px) {
@@ -99,3 +185,20 @@ $primary: #ff0044;
         }
     }
 }
+
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+

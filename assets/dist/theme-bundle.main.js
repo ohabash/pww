@@ -515,6 +515,7 @@ __webpack_require__.p = window.__webpack_public_path__;
 
 
 
+// window['$'] = $;
 
 var getAccount = function getAccount() {
     return new Promise(function (resolve) {
