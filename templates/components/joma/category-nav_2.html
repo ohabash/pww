@@ -1,12 +1,12 @@
 <!-- BCFIND file start :: ./templates/components/joma/category-nav_2.html -->
-<ul class="navPages-list-alt columns is-gapless">
-{{#each categories}}
+<ul class="navPages-list-alt columns is-gapless is-centered">
+    {{#each categories}}
     <li class="navPages-item alt column">
         <!-- t1 -->
         <a class="navPages-action has-subMenu {{#if children}}haschildren{{/if}}">
             <span class="text-menu">{{name}}</span>
             <i class="icon navPages-action-moreIcon hide" aria-hidden="true"><svg>
-                    <use xlink:href="#icon-chevron-down" /></svg></i>
+                <use xlink:href="#icon-chevron-down" /></svg></i>
         </a>
 
 
@@ -18,8 +18,6 @@
             <div class="t2-list">
                 {{#each children}}
 
-
-
                     {{!-- t3 triggers --}}
                     <div class="nav-t2-item">
                         <a href="{{url}}" class="t2-href">
@@ -30,28 +28,17 @@
 
                             <div class="t3-list-col columns is-multiline is-gapless">
                                 {{#each children}}
-                                    <div class="nav-t3-item column is-12">
-                                        <a href="{{url}}" class="text-menu">{{name}}</a>
-                                    </div>
+                                <div class="nav-t3-item column is-6">
+                                    <a href="{{url}}" class="text-menu">{{name}}</a>
+                                </div>
                                 {{/each}}
-                            </div>
-
-                            <div class="t3-list-grid-side">
-                                <a href="{{url}}" class="text-menu">View all {{name}}</a>
-                                {{#if image}}
-                                    <img class="t2-img" src="{{getImage image '80x80'}}" alt="{{name}}">
-                                {{else}}
-                                    <img
-                                        class="t2-img"
-                                        src="https://cdn11.bigcommerce.com/s-d8768tzdj/stencil/332cfbc0-23b8-0137-9598-0242ac110010/e/66f4f850-23b8-0137-de4a-0242ac110012/img/CategoryDefault.jpg"
-                                        alt="{{name}}">
-                                {{/if}}
+                                <div class="nav-t3-item column is-12" style="bottom: 1em; position: absolute;">
+                                    <a href="{{url}}" class="text-menu darker">View all {{name}}</a>
+                                </div>
                             </div>
                         </div>
                         
                     </div>
-
-
 
                 {{/each}}
             </div>
@@ -61,28 +48,71 @@
         {{/if}}
 
     </li>
-{{/each}}
+    {{/each}}
 </ul>
 
 
 <script>
+
+    /* var mx = 0;
+    var my = 0;
+    var angle = 0;
+    var currTarget; */
     setTimeout(() => {
 
-        $('.navPages-item').hover(function(e) {
-            var default_el = $(this).find('.t3-list');
-            $('.t3-list').removeClass('open');
-            console.log(default_el);
-            default_el.addClass('open');
-        });
+        // T1 HOVER
+        $('.navPages-item').hover(
+            function(e) {
+                var t2Items = $(this).find('.nav-t2-item').removeClass('active');
+                var currTarget = t2Items[0];
+                $(currTarget).addClass('active');
 
-        $('.nav-t2-item').hover(function(e) {
-            $('.nav-t2-item').removeClass('active')
-            $(this).addClass('active');
-            console.log('this', this);
-            $('.t3-list').removeClass('open');
-            $(this).find('.t3-list').addClass('open');
-        });
-    }, 1000);
+                /* $('.nav-t2-item').mousemove(function(e) {
+                    angle = getAngle(mx, my, e.pageX, e.pageY);
+                    if (angle != 0 && angle <= 50 && angle >= -50) {
+                        //console.log('DONT TRIGGER', angle);
+                    } else if (angle != 0 && $(e.target).hasClass('nav-t2-item')) {
+                        //console.log('TRIGGER     ', angle, e.target);
+
+                        currTarget = $(e.target);
+                        currTarget.addClass('active');
+                    }
+                    
+                    mx = e.pageX;
+                    my = e.pageY;
+                }); */
+            },
+            function() {
+                //$('.nav-t2-item').off('mousemove');
+            }
+        );
+
+        
+
+        // T2 HOVER
+        $('.nav-t2-item').hover(
+            function(e) {
+                $('.nav-t2-item').removeClass('active');
+                $(e.target).addClass('active');
+                //if (currTarget) currTarget.addClass('active');
+            },
+            function() {
+                
+            }
+        );
+    }, 100);
+
+
+
+    // Returns angle in degrees
+    /* function getAngle(cx, cy, ex, ey) {
+        var dy = ey - cy;
+        var dx = ex - cx;
+        var theta = Math.atan2(dy, dx); // range (-PI, PI]
+        theta *= 180 / Math.PI; // rads to degs, range (-180, 180]
+        //if (theta < 0) theta = 360 + theta; // range [0, 360)
+        return theta;
+    } */
 </script>
 
 

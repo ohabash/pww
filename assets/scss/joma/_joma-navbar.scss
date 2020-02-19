@@ -1,36 +1,39 @@
 @import 'bulma';
 
-$primary: #ff0044;
+$primary: #cb0039;
 $t2w: 200px;
 $red: $primary;
+$darker: #4A4A4A;
 
+.navPages-list-alt {
+    margin-bottom: 0 !important;
+}
 
 // nav (made by JOMA)
 .navPages-item.alt {
     position: relative;
+    
     .icon {
         height: 0.5rem;
         width: 0.5rem;
     }
 
-    // position: relative;
     h6 {
         color: #222;
     }
 
-    .t2-href {
-        display: block;
+    &:hover {
+        cursor: pointer;
 
-        &:hover {
-            h6 {
-                color: $primary;
-            }
+        .t2-href h6 {
+            color: $primary;
         }
     }
 
-    // .sub-cate-img img {
-    //     max-width: 250px;
-    // }
+    .t2-href {
+        display: block;
+    }
+
     .navPage-subMenu_alt {
         display: none;
         position: absolute;
@@ -60,35 +63,36 @@ $red: $primary;
 
     .t2-list {
         font-size: 0.9em;
+
         .nav-t2-item {
             background: #fff;
+            padding: 1em;
+            
             .t2-href {
                 text-decoration: none;
                 width: $t2w;
+                color: $darker;
+
                 h6 {
                     font-weight: bold;
                     padding: 0.4em;
                     padding-left: 1em;
                     margin: 0;
-                    line-height: 1.8em;
-
-                    &:hover {
-                        color: darken(#cb0039, 10%);
-                    }
                 }
             }
 
-            &:hover {
-                background: none;
-            }
-
             &.active {
-                background: #000;
-            }
+                background: none;
 
-            // &:hover .t3-list {
-            //     display: block;
-            // }
+                .t2-href {
+                    color: $primary !important;
+                text-decoration: underline;
+                }
+
+                .t3-list {
+                    display: block;
+                }
+            }
         }
 
         .t3-list {
@@ -96,20 +100,13 @@ $red: $primary;
             position: absolute;
             top: 0;
             left: $t2w;
-            pointer-events: auto;
+            cursor: default;
             background: $red;
             color: #fff;
 
             right: 0;
             height: 100%;
             padding: 1em;
-            &.open {
-                display: block;
-            }
-            // &:hover {
-            //     display: block;
-            //     pointer-events: auto;
-            // }
 
             .t2-img {
                 position: absolute;
@@ -117,16 +114,12 @@ $red: $primary;
                 // float: right;
             }
 
-            .t3-list-grid {
-            }
-
-            .t3-list-grid-side {
-                display: none;
-            }
-
             a {
                 text-decoration: none;
                 color: #fff;
+                &.darker {
+                    color: darken(#fff, 0.5);
+                }
             }
         }
     }
