@@ -25,13 +25,17 @@ $darker: #4A4A4A;
     &:hover {
         cursor: pointer;
 
-        .t2-href h6 {
+        .t2-href p {
             color: $primary;
         }
     }
 
     .t2-href {
         display: block;
+
+        p {
+            margin: 0;
+        }
     }
 
     .navPage-subMenu_alt {
@@ -71,11 +75,11 @@ $darker: #4A4A4A;
             .t2-href {
                 text-decoration: none;
                 width: $t2w;
-                color: $darker;
 
-                h6 {
+                p {
+                    color: $darker;
                     font-weight: bold;
-                    padding: 0.4em;
+                    padding: 0;
                     padding-left: 1em;
                     margin: 0;
                 }
@@ -84,9 +88,9 @@ $darker: #4A4A4A;
             &.active {
                 background: none;
 
-                .t2-href {
+                .t2-href p {
                     color: $primary !important;
-                text-decoration: underline;
+                    text-decoration: underline;
                 }
 
                 .t3-list {
@@ -117,6 +121,7 @@ $darker: #4A4A4A;
             a {
                 text-decoration: none;
                 color: #fff;
+
                 &.darker {
                     color: darken(#fff, 0.5);
                 }
@@ -154,7 +159,7 @@ $darker: #4A4A4A;
             position: sticky;
             top: 0;
             z-index: 2;
-            background: #fff;
+            //background: #fff;
             border-bottom: 1px solid rgba(#ccc, 0.75);
         }
 
@@ -178,20 +183,3 @@ $darker: #4A4A4A;
         }
     }
 }
-
-
-.pull-left {
-    float: left;
-}
-
-.pull-right {
-    float: right;
-}
-
-.clearfix:before,
-.clearfix:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-

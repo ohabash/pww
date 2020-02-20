@@ -1,5 +1,5 @@
 <!-- BCFIND file start :: ./templates/components/joma/category-nav_2.html -->
-<ul class="navPages-list-alt columns is-gapless is-centered">
+<ul class="navPages-list-alt columns is-gapless is-centered is-narrow">
     {{#each categories}}
     <li class="navPages-item alt column">
         <!-- t1 -->
@@ -26,13 +26,13 @@
                         {{!-- content --}}
                         <div class="t3-list">
 
-                            <div class="t3-list-col columns is-multiline is-gapless">
+                            <div class="t3-list-col columns is-multiline">
                                 {{#each children}}
                                 <div class="nav-t3-item column is-6">
                                     <a href="{{url}}" class="text-menu">{{name}}</a>
                                 </div>
                                 {{/each}}
-                                <div class="nav-t3-item column is-12" style="bottom: 1em; position: absolute;">
+                                <div class="nav-t3-item column is-12">
                                     <a href="{{url}}" class="text-menu darker">View all {{name}}</a>
                                 </div>
                             </div>
@@ -53,66 +53,52 @@
 
 
 <script>
-
-    /* var mx = 0;
+    var mx = 0;
     var my = 0;
     var angle = 0;
-    var currTarget; */
+    var currTarget;
+    var interval;
     setTimeout(() => {
 
         // T1 HOVER
         $('.navPages-item').hover(
             function(e) {
+
+                // Make first T2 active
                 var t2Items = $(this).find('.nav-t2-item').removeClass('active');
                 var currTarget = t2Items[0];
                 $(currTarget).addClass('active');
 
-                /* $('.nav-t2-item').mousemove(function(e) {
-                    angle = getAngle(mx, my, e.pageX, e.pageY);
-                    if (angle != 0 && angle <= 50 && angle >= -50) {
-                        //console.log('DONT TRIGGER', angle);
-                    } else if (angle != 0 && $(e.target).hasClass('nav-t2-item')) {
-                        //console.log('TRIGGER     ', angle, e.target);
+                interval = setInterval(() => {
+                    $('.nav-t2-item').removeClass('active');
+                    currTarget = $('.nav-t2-item:hover');
+                    currTarget.addClass('active');
+                }, 800);
 
+                $('.nav-t2-item').mousemove(function(e) {
+
+                    angle = Math.atan2(e.pageY - my, e.pageX - mx) * 180 / Math.PI;
+
+                    //console.log('angle', angle);
+                    if (angle <= 70 && angle >= -70) {
+
+                    } else if (angle != 0 && $(e.target).hasClass('nav-t2-item')) {
+                        
                         currTarget = $(e.target);
+                        $('.nav-t2-item').removeClass('active');
                         currTarget.addClass('active');
                     }
                     
                     mx = e.pageX;
                     my = e.pageY;
-                }); */
+                });
             },
             function() {
-                //$('.nav-t2-item').off('mousemove');
-            }
-        );
-
-        
-
-        // T2 HOVER
-        $('.nav-t2-item').hover(
-            function(e) {
-                $('.nav-t2-item').removeClass('active');
-                $(e.target).addClass('active');
-                //if (currTarget) currTarget.addClass('active');
-            },
-            function() {
-                
+                $('.nav-t2-item').off('mousemove');
+                if (interval) { clearInterval(interval); }
             }
         );
     }, 100);
-
-
-
-    // Returns angle in degrees
-    /* function getAngle(cx, cy, ex, ey) {
-        var dy = ey - cy;
-        var dx = ex - cx;
-        var theta = Math.atan2(dy, dx); // range (-PI, PI]
-        theta *= 180 / Math.PI; // rads to degs, range (-180, 180]
-        //if (theta < 0) theta = 360 + theta; // range [0, 360)
-        return theta;
-    } */
 </script>
 
 
