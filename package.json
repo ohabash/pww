@@ -17,6 +17,7 @@
     "lazysizes": "4.1.2",
     "lodash": "^4.17.4",
     "nod-validate": "^2.0.12",
+    "node-sass": "^2.1.1",
     "pace": "hubspot/pace#a03f1f1de62c9cea6c88b2267b8d7a83858b6cb6",
     "slick-carousel": "^1.8.1",
     "svg-injector": "^1.1.3",

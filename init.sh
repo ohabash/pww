@@ -1,0 +1,11 @@
+clear;
+# nvm use v10.16.3;
+rm -rf node_modules/;
+npm install -g node-gyp;
+npm i;
+npm install -g n;
+sudo n 0.12.7;
+npm install node-sass@2;
+npm -g install node-gyp@3;
+npm rebuild node-sass ;
+stencil start;
