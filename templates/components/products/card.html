@@ -1,4 +1,3 @@
-<!-- BCFIND file start :: ./templates/components/products/card.html -->
 {{#if show_compare}}
 
 <article class="card {{#if alternate}}card--alternate{{/if}} price-visibility{{#or customer (if theme_settings.restrict_to_login '===' true)}} restricted{{/or}} {{#if theme_settings.card-brand-name '===' true}}brand-sku-active{{/if}} {{#if theme_settings.card-brand-name '===' false}}brand-hidden{{/if}} {{#if theme_settings.card-sku '===' true}}brand-sku-active{{/if}} {{#if theme_settings.card-sku '===' false}}sku-hidden{{/if}}">
