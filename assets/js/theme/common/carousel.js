@@ -13,6 +13,7 @@ export default function () {
         $('.heroCarousel-slide').each(() => {
             const $container = $(this);
             const imgUrl = $container.find('img').data('lazy');
+            console.log('imgUrl :', imgUrl);
 
             if (imgUrl) {
                 $container.css('backgroundImage', `url(${imgUrl})`).addClass('compat-object-fit');

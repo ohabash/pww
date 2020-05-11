@@ -6403,8 +6403,18 @@ print {
 
 
 
-
-
+.pointer {
+  cursor: pointer !important;
+}
+.warning-img-contain {
+  img {
+    max-width: 100px;
+    @include ease(0.2s);
+    &:hover {
+      max-width: 300px;
+    }
+  }
+}
 
 
 

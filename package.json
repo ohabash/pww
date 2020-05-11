@@ -6,6 +6,7 @@
   "author": "Lone Star Templates",
   "license": "MIT",
   "dependencies": {
+    "@bigcommerce/stencil-cli": "^2.0.0",
     "@bigcommerce/stencil-utils": "^4.0.0",
     "aos": "^2.2.0",
     "babel-polyfill": "^6.26.0",

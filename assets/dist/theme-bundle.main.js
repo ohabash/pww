@@ -831,6 +831,7 @@ __webpack_require__.r(__webpack_exports__);
         jquery__WEBPACK_IMPORTED_MODULE_0___default()('.heroCarousel-slide').each(function () {
             var $container = jquery__WEBPACK_IMPORTED_MODULE_0___default()(_this);
             var imgUrl = $container.find('img').data('lazy');
+            console.log('imgUrl :', imgUrl);
 
             if (imgUrl) {
                 $container.css('backgroundImage', 'url(' + imgUrl + ')').addClass('compat-object-fit');

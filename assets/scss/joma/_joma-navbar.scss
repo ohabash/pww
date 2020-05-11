@@ -94,13 +94,13 @@ $darker: #4A4A4A;
                 }
 
                 .t3-list {
-                    display: block;
+                    // display: block;
                 }
             }
         }
 
         .t3-list {
-            display: none;
+            display: none !important;
             position: absolute;
             top: 0;
             left: $t2w;

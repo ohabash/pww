@@ -8,25 +8,30 @@
  {{/if}}
 
 <div class="slider{{#if theme_settings.slider_width '!==' 'full-width'}} in-container{{/if}} {{#if theme_settings.slide_content_background '===' 'without-bg'}} slide-content-no-bg{{/if}}">
-  {{#if carousel}}
+  {{!-- ((===== 0 =====)) --}}
+  {{!-- {{#if carousel}} --}}
+    {{!-- ((===== 1 =====)) --}}
     {{#if theme_settings.slider_content_alignment '===' 'left'}}
+    {{!-- ((===== 2 =====)) --}}
     <div class="left-aligned-content">
       {{> components/carousel}}
     </div>
     {{/if}}
 
     {{#if theme_settings.slider_content_alignment '===' 'center'}}
+    {{!-- ((===== 3 =====)) --}}
     <div class="center-aligned-content">
       {{> components/carousel}}
     </div>
     {{/if}}
 
     {{#if theme_settings.slider_content_alignment '===' 'right'}}
+    {{!-- ((===== 4 =====)) --}}
     <div class="right-aligned-content">
       {{> components/carousel}}
     </div>
     {{/if}}
-  {{/if}}
+  {{!-- {{/if}} --}}
 </div> <!-- slider -->
 <div class="clear"></div>
 

@@ -256,7 +256,7 @@
                 {{> components/common/wishlist-dropdown}}
             {{/if}}
         </div>
-        {{>components/common/share}}
+        {{!-- {{>components/common/share}} --}}
         {{{snippet 'product_details'}}}
     </section>
 
@@ -300,6 +300,9 @@
                 <h3 class="tab-content-title">Product Description</h3>
                 {{{product.description}}}
                 {{{snippet 'product_description'}}}
+                <div class="warning-img-contain">
+                    <img class="cancer pointer" src="{{cdn 'assets/img/cancer.jpg'}}">
+                </div>
             </div>
            {{#if product.warranty}}
                 <div class="tab-content warranty" id="tab-warranty">
@@ -359,3 +362,18 @@
     <div class="modal-content"></div>
     <div class="loadingOverlay"></div>
 </div>
+
+
+
+<script>
+    setTimeout( function(e) {
+        var links = $(".productView-info-value:contains('http')");
+        console.log('links', links)
+        links.each(function (index) {
+            link = $(this).text();
+            $(this).html(`<a download href="${link}" target=\"_blank\" class="download">Download</a>`);
+            console.log('$(this).innerHTML', $(this).html())
+            return $(this);
+        });
+    }, 1000);
+</script>
