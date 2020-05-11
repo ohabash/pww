@@ -94,14 +94,14 @@
     @include breakpoint("medium") {
         @include carouselOpaqueBackgrounds;
         background-color: rgba($carousel-bgColor, 0.7);
-        left: 0;
-        margin: 0 auto;
+        // left: 0;
+        // margin: 0 auto;
         padding: spacing("single") * .5;
-        position: absolute;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        width: remCalc(500px);
+        // position: absolute;
+        // right: 0;
+        // top: 50%;
+        // transform: translateY(-50%);
+        // width: remCalc(500px);
 
         &.heroCarousel-content--empty {
             background-color: transparent;

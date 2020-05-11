@@ -6419,7 +6419,12 @@ print {
 
 
 
-
+.car-container {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  height: 77vh;
+}
 
 
 
